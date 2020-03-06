@@ -1,0 +1,23 @@
+.userName {
+    font-weight: bold;
+    font-size: 20px;
+    margin: 35px 0 0 80px;
+}
+
+img {
+    height: 50px;
+    border-radius: 50px;
+    margin: 10px 20px 5px 5px;
+}
+
+.receivedMessage{
+    display: inline;
+    font-size: 25px;
+    background-color:#e9e9eb;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+    bottom: 20px;
+    right: 5px
+
+}

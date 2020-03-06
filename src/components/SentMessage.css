@@ -1,0 +1,14 @@
+.sentMessage{
+    display: inline;
+    text-align: right;
+    font-size: 25px;
+    color: white;
+    background-color: #1185f7;
+    padding: 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    position: absolute;
+    right: 20px;
+    /* right: 5px  */
+
+}

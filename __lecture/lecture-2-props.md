@@ -102,6 +102,18 @@ function VideoPlayer(props) {
   );
 }
 ```
+function VideoPlayer({videoUrl, width, height, description}) {
+  return (
+    <div>
+      <video
+        src= {videoUrl}
+        width={width}
+        height={hight}
+      />
+      <p>{description}</p>
+    </div>
+  );
+}
 
 ---
 
@@ -128,7 +140,27 @@ function Tweet(props) {
   );
 }
 ```
-
+function Tweet(props) {
+  return (
+    <div>
+      <Avatar src={props.src} />
+      <div>
+        <p>
+          <span className="user-name">{props.userName}</span>
+          <span className="handle">{props.handle}</span>
+          <span className="date">{props.date}</span>
+        </p>
+        <p>{props.tweet}</p>
+        <div>
+          <button>Reply</button>
+          <button>Retweet</button>
+          <button>Like</button>
+          <button>Share</button>
+        </div>
+      </div>
+    </div>
+  );
+}
 ---
 
 ```jsx
@@ -145,7 +177,18 @@ function Header(props) {
   );
 }
 ```
+function Header(props) {
+  return (
+    <header>
+      <h1>{props.header}</h1>
 
+      <nav>
+        <a href={props.nav.first.url}>{props.nav.first.btn}</a>
+        <a href={props.nav.second.url}>{props.nav.second.btn}</a>
+      </nav>
+    </header>
+  );
+}
 ---
 
 ### Mapping over items
@@ -213,7 +256,7 @@ const storeItems = [
   { id: 'c', price: 44.99, name: 'Top Hat' },
 ];
 
-function App(props) {
+function App() {
   return (
     <div>
       {storeItems.map(item => (
@@ -255,7 +298,14 @@ const pets = [
   </ul>
 </div>;
 ```
-
+{pets.map(pet => (
+  <PetInfo 
+    name = {pet.name} 
+    age= {pet.age} 
+    species={pet.species} 
+    breed={pet.breed}
+    />
+))}
 ---
 
 ```jsx
@@ -293,3 +343,8 @@ const pizzaToppings = [
 Hint: You'll need `filter` as well as `map`
 
 ---
+<Pizza>
+  {pizzaToppings.filter(topping => topping.isVegetarian)
+    .map(topping => <Topping name={topping.name}>)
+  })}
+</Pizza>

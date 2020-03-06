@@ -163,6 +163,8 @@ render(
 
 // ⚠️ New notation! another way to use of &&.
 ```
+equivalent to :
+<li className={ isOnline ? 'green' : ''}>
 
 ---
 
@@ -174,12 +176,17 @@ Convert this JSX snippet to HTML:
 let birthdayCakeImage = '/images/cake.jpg';
 let age = 10;
 
+//JSX
 <div className="wrapper">
-  <img src={birthdayCakeImage} />
+  <img src={birthdayCakeImage} alt='smth'/>
   <p>Happy {age}th birthday!</p>
 </div>;
 ```
-
+//HTML
+<div class="wrapper">
+<img src="/images/cakes.jpg" alt='smth'/>
+<p>Happy 10th birthaday!</p>
+</div>
 ---
 
 Convert this one too:
@@ -197,7 +204,12 @@ let agreeToTerms = false;
   )}
 </div>;
 ```
-
+//HTML
+<div>
+  <label for="terms-of-service">
+    <input type="checkbox" id="terms-os-service" /> I agree to the terms
+    </label>
+</div>
 ---
 
 Convert:
@@ -217,7 +229,6 @@ const pets = [
     breed: 'ragdoll',
   },
 ];
-
 <div>
   <h1 className="title">My pets:</h1>
   <ul>
@@ -262,6 +273,52 @@ const pets = [
     </li>
   </ul>
 </div>;
+
+//HTML
+<div>
+  <h1 class="title">My pets:</h1>
+  <ul>
+    <li>
+      <h3>Bark Obama</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Age</th>
+            <th>Species</th>
+            <th>Breed</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>3</td>
+            <td>dog</td>
+            <td>Labradoodle</td>
+          </tr>
+        </tbody>
+      </table>
+    </li>
+
+    <li>
+      <h3>Chairman Meow</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Age</th>
+            <th>Species</th>
+            <th>Breed</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>8</td>
+            <td>cat</td>
+            <td>ragdoll</td>
+          </tr>
+        </tbody>
+      </table>
+    </li>
+  </ul>
+</div>
 ```
 
 ---
